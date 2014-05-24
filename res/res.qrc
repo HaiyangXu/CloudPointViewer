@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/toolbutton">
+        <file>open_cloud.png</file>
+        <file>save_project.png</file>
+        <file>save_selected_cloud.png</file>
+        <file>show_axes.png</file>
+        <file>new_project.png</file>
+        <file>compute.png</file>
+        <file>camera.png</file>
+        <file>cmvs.jpg</file>
+        <file>nextArrow.jpg</file>
+        <file>preArrow.jpg</file>
+        <file>radius_outlier.jpg</file>
+        <file>statistical_removal.jpg</file>
+    </qresource>
+    <qresource prefix="/about">
+        <file>opencv-logo2.png</file>
+        <file>icon.png</file>
+        <file>pcl_vert_large_pos.png</file>
+    </qresource>
+    <qresource prefix="/html">
+        <file>about.txt</file>
+    </qresource>
+    <qresource prefix="/forms">
+        <file>RadiusOutlier.ui</file>
+        <file>StatisticalRemoval.ui</file>
+    </qresource>
+</RCC>

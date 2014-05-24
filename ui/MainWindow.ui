@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>763</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>3D RECONSTRUCTION</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/res.qrc">
+    <normaloff>:/about/icon.png</normaloff>:/about/icon.png</iconset>
+  </property>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>4</horstretch>
+     <verstretch>5</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>763</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Project"/>
+    <addaction name="actionOpen_Cloud"/>
+    <addaction name="actionSave_Cloud"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuCloudFilter">
+     <property name="title">
+      <string>CloudFilter</string>
+     </property>
+     <addaction name="actionRadiusOutlier"/>
+    </widget>
+    <addaction name="actionCamera_Matrix"/>
+    <addaction name="actionCMVS"/>
+    <addaction name="menuCloudFilter"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuImage_Window">
+     <property name="title">
+      <string>Image Window</string>
+     </property>
+     <addaction name="actionKey_Points"/>
+     <addaction name="actionMatches"/>
+    </widget>
+    <addaction name="actionLog_Window"/>
+    <addaction name="menuImage_Window"/>
+   </widget>
+   <widget class="QMenu" name="menuOption">
+    <property name="title">
+     <string>Option</string>
+    </property>
+    <addaction name="actionSetting"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuOption"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Project"/>
+   <addaction name="actionCompute_Cloud"/>
+   <addaction name="actionOpen_Cloud"/>
+   <addaction name="actionSave_Cloud"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCamera_Matrix"/>
+   <addaction name="actionCMVS"/>
+   <addaction name="actionMatches"/>
+   <addaction name="actionPreImagePair"/>
+   <addaction name="actionNextImagePair"/>
+   <addaction name="actionRadiusOutlier"/>
+   <addaction name="actionStatisticalRemoval"/>
+  </widget>
+  <widget class="QDockWidget" name="logDockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+     <horstretch>1</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>Logs Window</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="acceptRichText">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionOpen_Cloud">
+   <property name="icon">
+    <iconset>
+     <normalon>:/toolbutton/open_cloud.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Open Cloud</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a Cloud and show it</string>
+   </property>
+   <property name="statusTip">
+    <string extracomment="Open"/>
+   </property>
+  </action>
+  <action name="actionNew_Project">
+   <property name="icon">
+    <iconset>
+     <normalon>:/toolbutton/new_project.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+   <property name="toolTip">
+    <string>select a set of image to compute</string>
+   </property>
+  </action>
+  <action name="actionCompute_Cloud">
+   <property name="icon">
+    <iconset resource="../res/res.qrc">
+     <normaloff>:/toolbutton/compute.png</normaloff>:/toolbutton/compute.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compute Cloud</string>
+   </property>
+  </action>
+  <action name="actionSave_Cloud">
+   <property name="icon">
+    <iconset>
+     <normalon>:/toolbutton/save_selected_cloud.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Save Cloud</string>
+   </property>
+   <property name="toolTip">
+    <string>Save Cloud to file</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionCamera_Matrix">
+   <property name="icon">
+    <iconset resource="../res/res.qrc">
+     <normaloff>:/toolbutton/camera.png</normaloff>:/toolbutton/camera.png</iconset>
+   </property>
+   <property name="text">
+    <string>Camera Matrix</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionCMVS">
+   <property name="icon">
+    <iconset>
+     <normalon>:/toolbutton/cmvs.jpg</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>CMVS</string>
+   </property>
+   <property name="toolTip">
+    <string>Reconstruct Dense Points Cloud</string>
+   </property>
+  </action>
+  <action name="actionLog_Window">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Log Window</string>
+   </property>
+  </action>
+  <action name="actionSetting">
+   <property name="text">
+    <string>Setting</string>
+   </property>
+  </action>
+  <action name="actionKey_Points">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Key Points</string>
+   </property>
+  </action>
+  <action name="actionMatches">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Matches</string>
+   </property>
+   <property name="toolTip">
+    <string>Show off the Matches of KeyPoints</string>
+   </property>
+  </action>
+  <action name="actionNextImagePair">
+   <property name="icon">
+    <iconset>
+     <normalon>:/toolbutton/nextArrow.jpg</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>NextImagePair</string>
+   </property>
+  </action>
+  <action name="actionPreImagePair">
+   <property name="icon">
+    <iconset resource="../res/res.qrc">
+     <normaloff>:/toolbutton/preArrow.jpg</normaloff>:/toolbutton/preArrow.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>PreImagePair</string>
+   </property>
+  </action>
+  <action name="actionRadiusOutlier">
+   <property name="icon">
+    <iconset>
+     <normalon>:/toolbutton/radius_outlier.jpg</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>RadiusOutlier</string>
+   </property>
+  </action>
+  <action name="actionStatisticalRemoval">
+   <property name="icon">
+    <iconset resource="../res/res.qrc">
+     <normaloff>:/toolbutton/statistical_removal.jpg</normaloff>:/toolbutton/statistical_removal.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>StatisticalRemoval</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../res/res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

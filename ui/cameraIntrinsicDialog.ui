@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>cameraIntrinsicDialog</class>
+ <widget class="QDialog" name="cameraIntrinsicDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>459</width>
+    <height>233</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Input Camera Matrix&amp;Distortion</string>
+  </property>
+  <property name="whatsThis">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please input the Camera Intrinsic Matrix (&lt;span style=&quot; font-weight:600;&quot;&gt;K&lt;/span&gt;) and Camera Distortion Coefficients(&lt;span style=&quot; font-weight:600;&quot;&gt;D&lt;/span&gt;).&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#ff0000;&quot;&gt;Note:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic;&quot;&gt;You should input these parameters &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#ff0000;&quot;&gt;after&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic;&quot;&gt; you have selected the images to compute!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>401</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Camera Intrinsic Matrix(&lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;) and Camera Distortion Coefficients(&lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>200</y>
+     <width>151</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>60</y>
+     <width>375</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;K=&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QSplitter" name="splitter_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QLineEdit" name="cameraMat_0">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="cameraMat_1">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="cameraMat_2">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QSplitter" name="splitter_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QLineEdit" name="cameraMat_3">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="cameraMat_4">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="cameraMat_5">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QSplitter" name="splitter_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QLineEdit" name="cameraMat_6">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="cameraMat_7">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="cameraMat_8">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="cursorPosition">
+          <number>4</number>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;D=&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSplitter" name="splitter_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QLineEdit" name="cameraMat_9">
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string>0.00</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="cursorPosition">
+            <number>4</number>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="cameraMat_10">
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string>0.00</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="cursorPosition">
+            <number>4</number>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="cameraMat_11">
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string>0.00</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="cursorPosition">
+            <number>4</number>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="cameraMat_12">
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string>0.00</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="cursorPosition">
+            <number>4</number>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder></zorder>
+  <zorder>line_3</zorder>
+  <zorder>cameraMat_1</zorder>
+  <zorder>cameraMat_2</zorder>
+  <zorder>cameraMat_6</zorder>
+  <zorder>cameraMat_7</zorder>
+  <zorder>cameraMat_8</zorder>
+  <zorder>splitter_4</zorder>
+  <zorder>splitter_5</zorder>
+  <zorder>label_2</zorder>
+  <zorder>line_4</zorder>
+  <zorder>cameraMat_10</zorder>
+  <zorder>cameraMat_11</zorder>
+  <zorder>cameraMat_9</zorder>
+  <zorder>cameraMat_12</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_3</zorder>
+  <zorder>verticalSpacer</zorder>
+  <zorder>verticalSpacer_2</zorder>
+  <zorder></zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
